@@ -11,29 +11,50 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("This is the root view")
-                NavigationLink(destination: SecondView()) {
-                    Text("About")
-                }
+                Text("This is the home screen!")
                 
-                NavigationLink(destination: Contact()) {
-                    Text("Contact")
+                HStack {
+                    NavigationLink(destination: SecondView()) {
+                        VStack {
+                            Text("About")
+                            Image("user-2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50.0, height: 50.0)
+                        }
+                    }
+                    
+                    NavigationLink(destination: Contact()) {
+                        VStack{
+                            Text("Contact")
+                            Image("phone-call")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50.0, height: 50.0)
+                        }
+                    }
+                    
+                    NavigationLink(destination: Help()) {
+                        VStack{
+                            Text("Help")
+                            Image("question-sign")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50.0, height: 50.0)
+                        }
+                    }
+                    
                 }
-                
-                NavigationLink(destination: Help()) {
-                    Text("Help")
-                }
-                
+                .navigationTitle("Home")
+                //this changes the name of the "back" arrow that comes up when you go to the second page
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarHidden(true)
             }
-        .navigationTitle("Home")
-        //this changes the name of the "back" arrow that comes up when you go to the second page
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarHidden(true)
+            
         }
-        
     }
+    
 }
-
 #Preview {
     ContentView()
 }
