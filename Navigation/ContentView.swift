@@ -12,11 +12,16 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 Text("This is the root view")
-                NavigationLink(destination: Text("You've arrived to the Second View!")) {
+                NavigationLink(destination: SecondView()) {
                     Text("Click Me!")
                 }
             }
+        .navigationTitle("Home")
+        //this changes the name of the "back" arrow that comes up when you go to the second page
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(true)
         }
+        
     }
 }
 
