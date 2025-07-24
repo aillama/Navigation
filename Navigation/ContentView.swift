@@ -13,8 +13,17 @@ struct ContentView: View {
             VStack {
                 Text("This is the root view")
                 NavigationLink(destination: SecondView()) {
-                    Text("Click Me!")
+                    Text("About")
                 }
+                
+                NavigationLink(destination: Contact()) {
+                    Text("Contact")
+                }
+                
+                NavigationLink(destination: Help()) {
+                    Text("Help")
+                }
+                
             }
         .navigationTitle("Home")
         //this changes the name of the "back" arrow that comes up when you go to the second page

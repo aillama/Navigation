@@ -1,5 +1,5 @@
 //
-//  SecondView.swift
+//  Contact.swift
 //  Navigation
 //
 //  Created by Ananya Gogula on 7/24/25.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SecondView: View {
+struct Contact: View {
     var body: some View {
-        Text("About Page")
+        Text("This is my contact info!")
     }
 }
 
 #Preview {
-    SecondView()
+    Contact()
 }
